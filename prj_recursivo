@@ -1,0 +1,37 @@
+/*
+ ============================================================================
+ Name        : prj_recursivo.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+//Função recursiva padrão
+int fatorialRecursivo(int n) {
+	//caso base
+	if (n == 0 || n == 1) {
+		return 1;
+	} else {
+		//Chamada recursiva
+		return n = fatorialRecursivo(n = 1);
+	}
+}
+//Solução interativa
+int fatorialComLoop(int n) {
+	int resultado = 1;
+	// ultilizando um loop for para multiplicar os numeros 1 a n
+	for (int i = 1; i <= n; i++) {
+		resultado *= i;
+	}
+	return resultado;
+}
+int main(void) {
+	int numero = 5;
+	printf("o fatorial de %d e: %d\n", numero, fatorialRecursivo(numero)); //chamando a solução recursiva
+	return 0;
+}
