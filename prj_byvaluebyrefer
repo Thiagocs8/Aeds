@@ -1,0 +1,32 @@
+/*
+ ============================================================================
+ Name        : prj.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void incrementarPorValor(int x) {
+	x++;
+	// O escopo desta variavel vale somente dentro da função
+	// Voce pode inclusive chamar esta variavel de y ou de x
+}
+void incrementarPorReferencia(int*x){
+	(*x)++;
+}
+int main(void) {
+	int numero = 5;
+	incrementarPorValor(numero);
+	printf("Valor original: %d\n", numero); //Saida: valor original: 5
+
+	incrementarPorReferencia(&numero);
+	printf("Valor modificado:%d\n", numero); //Saida: valor modificado: 6
+
+
+	return EXIT_SUCCESS;
+}
