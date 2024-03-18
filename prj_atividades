@@ -1,0 +1,89 @@
+/*
+ ============================================================================
+ Name        : prj_tarefa2.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+//atividade 1
+	void MostrarParesMultiplos3(){
+		for(int i = 2; i <= 1000; i += 2){
+		//de 2 em 2
+		if(i % 3 == 0){
+			printf("%d", i);
+		}
+	}
+}
+
+//atividade 2
+	void CalcularSomaeMedia(){
+	int numero = 0;
+	int soma= 0;
+	printf("Digite10NumerosInteiros:\n");
+	for(int i = 0; i < 10; i ++){
+		scanf("%d", & numero);
+		soma = + numero;
+	}
+	double media = soma/10;
+	printf ("A soma é: %d\n", soma);
+	printf ("A media é: %.2lf", media);
+	}
+
+//atividade 3
+	void CalcularAreaDosComodos(){
+		double largura, comprimento, area, areatotal;
+		for(int i=1; i<=4; i ++){
+			printf("Digite a largura do comodo:%d", largura);
+			scanf("%lf", &largura);
+			printf("Digite o comprimento do comodo:%d", comprimento);
+			scanf("%lf", &comprimento);
+
+			area= largura * comprimento;
+			areatotal = areatotal + area;
+
+			printf("A area do comodo %d é: %.2lf metros quadrados\n", i, area);
+			printf("A area total é: %.2lf", areatotal);
+
+		}
+	}
+
+//atividade 4
+	void CalcularPerimetroEAreaCircular(){
+		double raio, perimetro, area;
+		const double PI= 3.14;
+
+		printf("Digite o valor do raio do círculo: ");
+		scanf("%lf", &raio);
+
+		perimetro = 2*PI*raio;
+		area = PI*raio*raio;
+
+		printf("Perimetro do círculo:%.2lf", perimetro);
+		printf("Area do círculo:%.2lf", area);
+
+	}
+
+//atividade 5
+	void PagamentoLoja(){
+		double pagamento;
+		printf("Digite o valor da prestação:");
+		fflush(stdout);
+		scanf("%lf", &pagamento);
+		if(pagamento < 300)
+			printf("Você tem a possibilidade de efetuar o pagamento a vista ou parcelado em 2x");
+		if(pagamento >=300)
+			printf("Você tem a possibilidade de efetuar o pagamento a vista ou parcelado em 3x");
+	}
+int main(){
+	//MostrarParesMultiplos3();
+	//CalcularSomaeMedia();
+	//CalcularAreaDosComodos();
+	//CalcularPerimetroEAreaCircular();
+	PagamentoLoja();
+}
