@@ -1,0 +1,36 @@
+/*
+ ============================================================================
+ Name        : prj_tarefa.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void jogobasquete(){
+	int altura,idade, sexo;
+	printf("Bem vindo\npara saber se você entra no time responda as perguntas a seguir:\nqual a sua altura?\n");
+	scanf("%d",&altura);
+	printf("Qual a sua idade?\n");
+	scanf("%d",&idade);
+	printf("Qual o seu sexo?\n1.Masculino\n2.Feminino\n");
+	scanf("%d",&sexo);
+	if(altura >= 180 && idade > 16 && sexo == 2) {
+		printf("Apto a jogar no time juvenil de basquete feminino.");
+	}
+	if(altura >= 180 && idade > 16 && sexo == 1) {
+		printf("Apto a jogar no time juvenil de basquete masculino.");
+	}
+	if(altura < 180 && idade <= 16) {
+	printf("não apto");
+	}
+}
+int main(){
+	jogobasquete();
+	return 0;
+}
+
