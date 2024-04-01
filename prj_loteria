@@ -1,0 +1,29 @@
+/*
+ ============================================================================
+ Name        : prj_random.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+	srand(time(NULL));
+	printf("loteria");
+	int numeroSorteado = rand() % 101;
+	printf("\n escolha um número entre 0 e 100: ");
+	int numeroescolhido;
+	scanf("%d", &numeroescolhido);
+	if (numeroescolhido == numeroSorteado) {
+		printf("Você ganhou!");
+	} else {
+		printf("Você perdeu, o número sorteado é %d", numeroSorteado);
+	}
+	return 0;
+}
+
