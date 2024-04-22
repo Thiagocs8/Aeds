@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char palavra[100];
+    int tamanho;
+    int palindromo = 1;
+    FILE *arquivo = fopen("exemplo.txt", "w");
+    
+    if (arquivo != NULL) {
+        while (1) {
+            printf("Digite uma palavra (ou exit para sair): ");
+            fflush(stdout);
+            scanf("%s", palavra);
+            
+            if (strcmp(palavra, "exit") == 0){
+                break;
+            }
+            
+            tamanho = strlen(palavra);
+            palindromo = 1;
+            
+            // Verificar se é um palíndromo
+            
+            for(int i = 0; i < tamanho / 2; i++) {
+                if (palavra[i] != palavra[tamanho - 1 - i]) {
+                    palindromo = 0;
+                    break;
+                }
+            }
+            
+            if (palindromo) {
+                printf("\n'%s' é um palíndromo.\n", palavra);
+                fprintf(arquivo, "'%s' é um palíndromo.\n", palavra);
+            } else {
+                printf("\n'%s' não é um palíndromo.\n", palavra);
+                fprintf(arquivo, "'%s' não é um palíndromo.\n", palavra);
+            }
+        }
+        
+        printf("Programa encerrado.\n");
+        fclose(arquivo);
+    } else {
+        printf("Erro ao abrir o arquivo.\n");
+    }
+    
+    return 0;
+}
